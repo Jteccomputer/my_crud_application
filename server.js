@@ -243,6 +243,10 @@ app.get("/post/:id", (req, res) => {
 
 })
 
+app.get("/register", (req, res) => {
+  res.render("register")  // render the register.ejs view
+})
+
 app.post("/create-post", mustBeLoggedIn, (req, res) => {
     // we validate the body and the title fields
     const errors = sharedPostValidation(req)

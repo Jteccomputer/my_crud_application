@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('includes/head.ejs') %>
+<body>
+  <%- include('includes/header.ejs') %>
+
+  <main>
+    <form action="/register" method="POST">
+      <% if (errors && errors.length > 0) { %>
+        <% errors.forEach(error => { %>
+          <p class="notice"><%= error %></p>
+        <% }) %>
+      <% } %>
+
+      <fieldset>
+        <legend>Create Account</legend>
+
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" autocomplete="off" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" autocomplete="off" required>
+
+        <br>
+
+        <button>Sign Up</button>
+      </fieldset>
+    </form>
+  </main>
+
+  <%- include('includes/footer.ejs') %>
+</body>
+</html>
